@@ -11,15 +11,12 @@ public class GameUtil {
 		int[] arr = new int[5];
 		
 		arr[0] =4;
-		arr[1] =2;
-		arr[2] =0;
-		arr[3] =2;
-		arr[4] =0;
+		arr[1] =0;
+		arr[2] =2;
+		arr[3] =0;
+		arr[4] =2;
 		
-		int index1 = findNextNonemptyCell(arr,1);
-		int index2 = findNextNonemptyCell(arr,index1);
-		
-		System.out.println(index2);
+		findNextMove(arr,1);
 		
 	}
 	
@@ -31,9 +28,10 @@ public class GameUtil {
 	}
 	
 	public static int findNextNonemptyCell(int[] arr,int start){
+		
 		for(int i = start+1;i<arr.length;i++){
 			if(arr[i] != 0){
-				return i-1;
+				return i;
 			}
 		}
 		return -1;
@@ -44,17 +42,16 @@ public class GameUtil {
 		
 		int index1 = findNextNonemptyCell(arr,index);
 		int index2 = findNextNonemptyCell(arr,index1);
+
 		
-		//System.out.println(index1);
-		//System.out.println(index2);
-		
-		if(arr[index1] == arr[index2] &&index2 != -1){
-			System.out.println("BRUH BRUH");
+		if(index1 != -1 && index2 != -1 && arr[index1] == arr[index2]){
 			return new Move(index1,index2,index,arr[index1]);
 		}
-		else{
-			System.out.println("LOL LOL");
+		else if(index1 != -1){
 			return new Move(index1,index,arr[index1]);
+		}
+		else{
+			return null;
 		}
 		
 	}
@@ -72,8 +69,14 @@ public class GameUtil {
 	}
 	
 	public static ArrayList<Move> collapseArray(int[] arr){
+		ArrayList<Move> retMoves = new ArrayList<Move>();
 		
-		
+		for(int i =0;i<arr.length;i++){
+			if(arr[i] != 0){
+				retMoves.add(findNextMove(arr,i));
+			}
+		}
+		return retMoves;
 		
 		
 	}

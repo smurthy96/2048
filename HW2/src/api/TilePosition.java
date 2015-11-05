@@ -2,22 +2,27 @@ package api;
 
 public class TilePosition {
 	
+	private int givenRow;
+	private int givenCol;
+	private int givenValue;
 	public TilePosition(int givenRow,int givenCol,int givenValue){
-		
+		this.givenRow = givenRow;
+		this.givenCol = givenCol;
+		this.givenValue = givenValue;
 	}
 	
 	public int getRow(){
-		return 0;
+		return this.givenRow;
 		
 	}
 
 	public int getCol(){
-		return 0;
+		return this.givenCol;
 		
 	}
 	
 	public int getValue(){
-		return 0;
+		return this.givenValue;
 		
 	}
 	
