@@ -7,6 +7,7 @@ import api.Move;
 public class GameUtil {
 
 	private static Move useMove;
+	private static int[] temparr;
 	
 	public GameUtil(){
 		
@@ -22,21 +23,16 @@ public class GameUtil {
 		return -1;
 		
 	}
-	
-	/**
-	 * It will find the immediate tile to the right to merge left if it is the same
-	 * number
-	 * 
-	 * @param arr
-	 * @param index
-	 * @return
-	 */
+
 	public static Move findNextMove(int[] arr, int index){
+		
 		
 		int index1 = findNextNonemptyCell(arr,index);
 		int index2 = findNextNonemptyCell(arr,index1);
 		
-		if(index1 == index2){
+		
+
+		if(index1 == index2 && index1 != -1 && index2 != -1){
 			return new Move(index1,index2,index,arr[index1]);
 		}
 		else{
@@ -46,16 +42,21 @@ public class GameUtil {
 	}
 	
 	public static void applyOneMove(int[] arr, Move move){
-		for(int a:arr){
-			
-		}
+		int oldIndex1 = move.getOldIndex();
+		int oldIndex2 = move.getOldIndex2();
+		int newIndex = move.getNewIndex();
+		int value = move.getValue();
+		
+		temparr = arr;
+		temparr[newIndex] = arr[oldIndex1]+arr[oldIndex2];
+		
 		
 	}
 	
 	public static ArrayList<Move> collapseArray(int[] arr){
 		
 		
-		return null;
+		
 		
 	}
 }
