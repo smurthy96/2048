@@ -32,7 +32,16 @@ public class GameUtil {
 	 * @return
 	 */
 	public static Move findNextMove(int[] arr, int index){
-		findNextnonEmptyCell(arr,index); 
+		
+		int index1 = findNextNonemptyCell(arr,index);
+		int index2 = findNextNonemptyCell(arr,index1);
+		
+		if(index1 == index2){
+			return new Move(index1,index2,index,arr[index1]);
+		}
+		else{
+			return new Move(index1,index,arr[index1]);
+		}
 		
 	}
 	
