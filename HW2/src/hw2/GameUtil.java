@@ -61,9 +61,21 @@ public class GameUtil {
 		int oldIndex2 = move.getOldIndex2();
 		int newIndex = move.getNewIndex();
 		int value = move.getValue();
-		
 		temparr = arr;
-		temparr[newIndex] = arr[oldIndex1]+arr[oldIndex2];
+		
+		if(oldIndex2 == 0){
+			
+			temparr[newIndex] = arr[oldIndex1];
+			temparr[oldIndex1] = 0;
+			
+		}
+		else{
+			temparr[newIndex] = arr[oldIndex1] + arr[oldIndex2];
+			temparr[oldIndex1] = 0;
+			temparr[oldIndex2] = 0;
+		}
+		
+		
 		
 		
 	}
