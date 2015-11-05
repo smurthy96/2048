@@ -6,7 +6,7 @@ import api.Move;
 
 public class GameUtil {
 
-	private Move useMove;
+	private static Move useMove;
 	
 	public GameUtil(){
 		
@@ -23,24 +23,16 @@ public class GameUtil {
 		
 	}
 	
+	/**
+	 * It will find the immediate tile to the right to merge left if it is the same
+	 * number
+	 * 
+	 * @param arr
+	 * @param index
+	 * @return
+	 */
 	public static Move findNextMove(int[] arr, int index){
-		
-		for(int i =index;i<arr.length;i++){
-			if(!(arr[i] == 0)){
-				for(int a:arr){
-					if(!(a==0)){
-						if(a==arr[i]){
-							return 
-						}
-					}
-				}
-			}
-			else{
-				
-			}
-		}
-		
-		return null;
+		findNextnonEmptyCell(arr,index); 
 		
 	}
 	
