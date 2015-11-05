@@ -32,7 +32,7 @@ public class GameUtil {
 		
 		
 
-		if(index1 == index2 && index1 != -1 && index2 != -1){
+		if(arr[index1] == arr[index2] && index1 != -1 && index2 != -1){
 			return new Move(index1,index2,index,arr[index1]);
 		}
 		else{
