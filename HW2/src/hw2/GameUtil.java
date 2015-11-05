@@ -63,14 +63,14 @@ public class GameUtil {
 		int value = move.getValue();
 		temparr = arr;
 		
-		if(oldIndex2 == 0){
+		if(!(move.isMerged())){
 			
-			temparr[newIndex] = arr[oldIndex1];
+			temparr[newIndex] = move.getValue();
 			temparr[oldIndex1] = 0;
 			
 		}
 		else{
-			temparr[newIndex] = arr[oldIndex1] + arr[oldIndex2];
+			temparr[newIndex] = move.getValue()*2;
 			temparr[oldIndex1] = 0;
 			temparr[oldIndex2] = 0;
 		}
