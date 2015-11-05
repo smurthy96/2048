@@ -83,11 +83,13 @@ public class GameUtil {
 	public static ArrayList<Move> collapseArray(int[] arr){
 		ArrayList<Move> retMoves = new ArrayList<Move>();
 		
-		for(int i =0;i<arr.length;i++){
-			if(arr[i] != 0){
-				retMoves.add(findNextMove(arr,i));
+		for(int i =0;i<arr.length;i++){ 
+			Move m = findNextMove(arr,i);
+			if(m != null){			
+				retMoves.add(m);
+				applyOneMove(arr, m);
+				}		
 			}
-		}
 		return retMoves;
 		
 		
