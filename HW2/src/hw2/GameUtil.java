@@ -12,16 +12,17 @@ public class GameUtil {
 		
 		arr[0] =4;
 		arr[1] =2;
-		arr[2] =2;
-		arr[3] =0;
-		arr[4] =2;
+		arr[2] =0;
+		arr[3] =2;
+		arr[4] =4;
+
+//		Move m = findNextMove(arr,0);
+//		applyOneMove(arr, m);
 		
-		//Move m = findNextMove(arr,1);
 		System.out.println(collapseArray(arr));
 		
 	}
 	
-	private static int[] temparr;
 	
 	public GameUtil(){
 		
@@ -60,18 +61,19 @@ public class GameUtil {
 		int oldIndex2 = move.getOldIndex2();
 		int newIndex = move.getNewIndex();
 		int value = move.getValue();
-		temparr = arr;
 		
 		if(!(move.isMerged())){
 			
-			temparr[newIndex] = value;
-			temparr[oldIndex1] = 0;
+			arr[newIndex] = value;
+			arr[oldIndex1] = 0;
 			
 		}
 		else{
-			temparr[newIndex] = value*2;
-			temparr[oldIndex1] = 0;
-			temparr[oldIndex2] = 0;
+			arr[newIndex] = value*2;
+			arr[oldIndex2] = 0;
+			for(int i =0; i < arr.length;i++){
+				System.out.println(arr[i]);
+			}
 		}
 		
 		
@@ -89,6 +91,7 @@ public class GameUtil {
 				applyOneMove(arr, m);
 				}		
 			}
+
 		return retMoves;
 		
 		

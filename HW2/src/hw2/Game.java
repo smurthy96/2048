@@ -1,15 +1,18 @@
 package hw2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
-
 import api.Direction;
+import api.Move;
 import api.Result;
 import api.TilePosition;
 
 public class Game {
 
-	private int givenSize;
+	private int givenSize = 0;
 	private Random givenRandom;
+	private TilePosition tiles;
 	
 	public Game(int givenSize){
 		this.givenSize = givenSize;
@@ -18,12 +21,10 @@ public class Game {
 	public Game(int givenSize, Random givenRandom){
 		this.givenSize = givenSize;
 		this.givenRandom = givenRandom;
-		
 	}
 	
 	public int getCell(int row, int col){
-		
-		return (Integer) null;
+		return tiles.getValue();
 	}
 	
 	public void setCell(int row,int col, int val){
@@ -31,7 +32,7 @@ public class Game {
 	}
 	
 	public int getSize(){
-		return this.givenSize;
+		return this;
 	}
 	
 	public int getScore(){
@@ -49,8 +50,6 @@ public class Game {
 	
 	public Result collapse(Direction dir){
 		
-		
-		return null;
 		
 	}
 	
