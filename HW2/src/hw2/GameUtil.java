@@ -11,16 +11,16 @@ public class GameUtil {
 		int[] arr = new int[5];
 		
 		arr[0] =4;
-		arr[1] =0;
+		arr[1] =2;
 		arr[2] =2;
 		arr[3] =0;
-		arr[4] =0;
+		arr[4] =2;
 		
+		//Move m = findNextMove(arr,1);
 		System.out.println(collapseArray(arr));
 		
 	}
 	
-	private static Move useMove;
 	private static int[] temparr;
 	
 	public GameUtil(){
@@ -39,16 +39,15 @@ public class GameUtil {
 
 	public static Move findNextMove(int[] arr, int index){
 		
-		
 		int index1 = findNextNonemptyCell(arr,index);
 		int index2 = findNextNonemptyCell(arr,index1);
 
-		
+
 		if(index1 != -1 && index2 != -1 && arr[index1] == arr[index2]){
-			return new Move(index1,index2,index,arr[index1]);
+			return new Move(index1,index2,index+1,arr[index1]);
 		}
 		else if(index1 != -1){
-			return new Move(index1,index,arr[index1]);
+			return new Move(index1,index+1,arr[index1]);
 		}
 		else{
 			return null;

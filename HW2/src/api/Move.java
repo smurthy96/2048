@@ -296,11 +296,11 @@ public class Move {
 	    
 	    if (merged)
 	    {
-	      return "Merge " + oldIndex + " and " + oldIndex2 + " to " + newIndex + rowAndDirection;
+	      return "Merge Index:" + oldIndex + " and Index:" + oldIndex2 + " to Index:" + newIndex + rowAndDirection;
 	    }
 	    else
 	    {
-	      return "Move " + oldIndex + " to " + newIndex  + rowAndDirection;
+	      return "Move Index:" + oldIndex + " to Index:" + newIndex  + rowAndDirection;
 	    }
 	  }
 	
