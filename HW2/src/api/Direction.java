@@ -1,27 +1,9 @@
 package api;
 
-public enum Direction {
-
-	Direction(){
-		
-	};
-	
-	
-	
-	static Direction valueOf(){
-		return null;
-		
-	}
-	
-	static Direction[] value(){
-		return null;
-		
-	}
-	
-	static Direction LEFT;
-	static Direction RIGHT;
-	static Direction UP;
-	static Direction DOWN;
-	
-	
+/**
+ * Indication of direction for game moves.
+ */
+public enum Direction
+{
+  LEFT, RIGHT, UP, DOWN
 }

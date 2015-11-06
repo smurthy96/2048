@@ -14,9 +14,9 @@ public class GameUtil {
 		arr[1] =0;
 		arr[2] =2;
 		arr[3] =0;
-		arr[4] =2;
+		arr[4] =0;
 		
-		findNextMove(arr,1);
+		System.out.println(collapseArray(arr));
 		
 	}
 	
@@ -65,12 +65,12 @@ public class GameUtil {
 		
 		if(!(move.isMerged())){
 			
-			temparr[newIndex] = move.getValue();
+			temparr[newIndex] = value;
 			temparr[oldIndex1] = 0;
 			
 		}
 		else{
-			temparr[newIndex] = move.getValue()*2;
+			temparr[newIndex] = value*2;
 			temparr[oldIndex1] = 0;
 			temparr[oldIndex2] = 0;
 		}
