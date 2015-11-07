@@ -16,11 +16,52 @@ public class Game {
 	
 	public Game(int givenSize){
 		this.givenSize = givenSize;
+		
+		Random rand = new Random();
+		
+		int ranX = rand.nextInt(givenSize);
+		int ranY = rand.nextInt(givenSize);
+		int ran2X= rand.nextInt(givenSize);
+		int ran2Y= rand.nextInt(givenSize);
+		
+		
+		
+		
+		for(int i = 0; i < givenSize;i++){
+			for(int j = 0; j < givenSize;j++){
+				
+				tilesrc[i][j] = 0;
+			}
+		}
+		
+		//-------RandomAssignment-----
+		tilesrc[ranX][ranY]   = rand.nextInt(2)*2;
+		tilesrc[ran2X][ran2Y] = rand.nextInt(2)*2;		
+		
+		
+		
+		
 	}
 	
 	public Game(int givenSize, Random givenRandom){
 		this.givenSize = givenSize;
-		this.givenRandom = givenRandom;
+		
+		int ranX = givenRandom.nextInt(givenSize);
+		int ranY = givenRandom.nextInt(givenSize);
+		int ran2X= givenRandom.nextInt(givenSize);
+		int ran2Y= givenRandom.nextInt(givenSize);
+		
+		
+		for(int i = 0; i < givenSize;i++){
+			for(int j = 0; j < givenSize;j++){
+				
+				tilesrc[i][j] = 0;
+			}
+		}
+		
+		//-------RandomAssignment-----
+		tilesrc[ranX][ranY]   = givenRandom.nextInt(2)*2;
+		tilesrc[ran2X][ran2Y] = givenRandom.nextInt(2)*2;	
 	}
 	
 	public int getCell(int row, int col){
